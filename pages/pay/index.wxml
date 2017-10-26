@@ -1,0 +1,70 @@
+<import src="../../template/button.wxml" />
+
+<block wx:if="{{showContent}}">
+  <view class="padding-bottom" scroll-y="true">
+    <text class="title">房费</text>
+    <view class="divider-line" />
+
+    <view class="prices-container">
+
+      <block wx:for="{{price.fees}}" wx:key="fee" wx:for-item="fee" wx:if="{{!hasPaidRoomFees}}">
+
+        <view class="part-margin">
+          <view class="room-part">
+            <text class="subtitle flex1">{{fee.room_type}} x {{fee.amount}}</text>
+            <text class="subtitle">¥{{fee.sum}}</text>
+          </view>
+
+          <block wx:for="{{fee.date_price}}" wx:key="*this" wx:for-item="dp">
+            <view class="dp-part">
+              <text class="font flex1">{{dp.dateStr}}</text>
+              <text class="font">¥{{dp.Yprice}} x {{fee.amount}}</text>
+            </view>
+          </block>
+        </view>
+
+      </block>
+
+      <view class="room-part">
+        <text class="subtitle flex1">押金</text>
+        <text class="subtitle">¥{{price.Ydeposit}}</text>
+      </view>
+    </view>
+
+    <block wx:if="{{!hasPaidRoomFees}}">
+      <view class="divider-line" />
+
+      <view class="sum-container title">
+        <text class="flex1 sum-font">合计</text>
+        <text class="flex1 sum-amount">¥ {{price.Ytotal_fee}}</text>
+      </view>
+
+      <view class="divider-line" />
+    </block>
+
+    <text class="prepay" wx:if="{{!hasPaidRoomFees}}">已付: ¥{{price.Yprepay}}</text>
+
+    <view class="need_pay">
+      <text class="need_pay_title">未付款:</text>
+      <text class="need_pay_price">¥{{price.Yneed_pay}}</text>
+    </view>
+
+    <view class="row align-center" wx:if="{{canCancel}}" bindtap="_showCodeInfo">
+      <text class="how-to-exit">如何退订?</text>
+      <image src="../../imgs/ic_help.png" class="how-to-exit-icon" mode="aspectFit" />
+    </view>
+  </view>
+
+  <view class="button-pos">
+    <template is="button" data="{{text: isPaid || price.Yneed_pay <= 0 ? '确认' : '微信支付', type: isPaid? 'primary' : 'wechat', onClick: '_next'}}" />
+    <text class="skip-text" bindtap="_skip" wx:if="{{!isPaid && mode === 'pre-checkin' && canDelayPay}}">到店支付</text>
+  </view>
+</block>
+<!-- 悬浮窗 catchtouchmove 阻止滑动事件向上冒泡 -->
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <view class="toast-container boxShadow" catchtouchmove="">
+    <text class="modal-title">退订政策？</text>
+    <text class="modal-text">• 如果您在第三方预订平台预订，请参考平台退订政策。\n•	如果您是酒店直订用户，您可以在 {{cancelTime}} 前电话取消预订。</text>
+  </view>
+</view>

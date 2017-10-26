@@ -1,0 +1,27 @@
+<import src="../../template/button.wxml" />
+
+<view class="container paddings verifyContainer">
+  <text class="message">短信已发送至 {{mobile}}</text>
+  <view class="phoneBox-input">
+    <input class="flex1" type="number" maxlength="6" placeholder="输入6位数字验证码" bindinput="bindInputTap" focus="{{true}}" />
+    <text class="{{canTap ? 'font-blue-2' : 'phoneBox-input-text2'}}" bindtap="_doubleclick">{{codeMsg}}</text>
+  </view>
+  <view class="error-msg">
+    <text wx:if="{{showHint}}">{{errorMsg}}</text>
+  </view>
+  <template is="button" data="{{text: '确认', type: canDoNext ? 'primary' : 'disable', onClick: '_next'}}" />
+  <view class="user-rules-container">
+    点击确认表示您同意<text class="user-rules" bindtap="_showCodeInfo">《{{rulesTitle}}》</text>
+  </view>
+</view>
+
+<!-- 悬浮窗 catchtouchmove 阻止滑动事件向上冒泡 -->
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container-scroll boxShadow" catchtouchmove="" scroll-y="true">
+    <view class="row">
+      <text class="flex1 modal-title">{{rulesTitle}}</text>
+    </view>
+    <text class="modal-text">{{userRules}}</text>
+  </scroll-view>
+</view>

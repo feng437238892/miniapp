@@ -1,0 +1,83 @@
+<import src="../../template/button.wxml" />
+<import src="../../template/orderDetail.wxml" />
+<import src="../../template/shareModal.wxml" />
+
+<scroll-view scroll-y="true" class="padding-bottom" wx:if="{{!isCheckinPeople}}" catchtouchmove="">
+
+  <template is="orderDetail" data="{{...order, showDetail: showDetail, isShowPrice: isShowPrice}}" />
+
+  <view class="hint-container" bindtap="_showCodeInfo" data-type="room">
+    <text class="hint">提示：我们已为您优先分配以下房间，您也可以在此修改房间。</text>
+  </view>
+
+  <view class="room-container">
+    <block wx:for="{{order.suborders}}" wx:key="*this">
+      <view class="cell boxShadow marginTopmin">
+        <view class="room-cell" bindtap='_selectRoom' data-subid="{{item.suborder_id}}" data-number="{{item.room_number}}" data-status="{{item.status}}">
+
+          <view class="column flex1">
+            <view class="row align-center">
+              <text class="room-number-clear">{{item.room_number ? item.room_number : '未分房'}}</text>
+              <text class="room-type-name">{{item.room_type_name}} {{item.breakfastStr}}</text>
+            </view>
+
+            <view class="tags-container" wx:if="{{item.tags.length > 0 || !item.room_number}}">
+              <block wx:for="{{item.tags}}" wx:key="tag" wx:for-item="tag" wx:if="{{item.room_number}}">
+                <text class="tags">{{tag}}</text>
+              </block>
+              <block wx:if="{{!item.room_number}}">
+                <text class="tags">该时段暂无空房间</text>
+              </block>
+            </view>
+          </view>
+
+          <text class="room-arrow font-gray-4" wx:if="{{item.status == 1 && item.room_number != null}}">重新选房</text>
+          <text class="bill-status" wx:if="{{item.status == 4}}">{{'已入住'}}</text>
+          <text class="bill-status" wx:if="{{item.status == 5 || status == 6}}">{{'已离店'}}</text>
+          <text class="bill-status" wx:if="{{item.status == 2 || status == 3}}">{{'已取消'}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</scroll-view>
+
+<view class="container padding" wx:if="{{isCheckinPeople}}">
+  <view class="hint-container-2">
+    <image class="hint-icon-2" mode="aspectFill" src="../../imgs/ic_hint.png" />
+    <text class="hint-clear">提示：完成入住人登记后，可在酒店办理“极速领卡”——刷身份证，刷脸即可快速领取房卡。</text>
+  </view>
+
+  <block wx:for="{{order.suborders}}" wx:key="suborder">
+    <view class="room-card" bindtap="{{item.status == 1 ? '_changePeople':null}}" data-subid="{{item.suborder_id}}">
+      <view class="card-head">
+        <text class="card-title flex1">{{item.room_type_name}} {{item.room_number ? item.room_number : '未分房'}}</text>
+        <text class="card-info" wx:if="{{item.status == 1}}">{{item.guests.length > 0 ? '修改入住人' : '选择入住人'}}</text>
+      </view>
+
+      <block wx:for="{{item.guests}}" wx:key="guest">
+        <view class="card-people">
+          <text class="card-title">{{item.name}}</text>
+          <text class="card-title">{{item.idcard}}</text>
+        </view>
+      </block>
+    </view>
+  </block>
+
+</view>
+
+<view class="button-pos">
+  <template is="button" data="{{text: '下一步', type: 'primary', onClick: isCheckinPeople ? '_next' : '_checkinPeople'}}" />
+  <text class="skip-text" bindtap="_next" wx:if="{{isCheckinPeople}}">暂不登记</text>
+</view>
+
+<template is="shareModal" data="{{showShare: showShare}}" />
+
+<!-- 悬浮窗 catchtouchmove 阻止滑动事件向上冒泡 -->
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <text class="modal-title">{{title}}</text>
+    <text class="modal-text">{{content}}</text>
+  </scroll-view>
+</view>

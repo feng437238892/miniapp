@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="service-title">
+  <text>房间号: 203</text>
+  </view>
+  <view class="service-box">
+    <view class="service-box-cell">
+      <view class="service-box1 commstyle">
+        <image class="ic-image" src="../../imgs/ic_invoices.png" mode="aspectFit" />
+        <text class="ic-text">发票</text>
+      </view>
+      <view class="service-box2 commstyle">
+        <image class="ic-image" mode="aspectFill" src="../../imgs/ic_servive.png" />
+        <text class="ic-text">客房服务</text>
+      </view>
+    </view>
+    <view class="service-box-cell">
+      <view class="service-box1 commstyle" bindtap="_branchWifi">
+        <image class="ic-image" src="../../imgs/ic_wi-fi.png" mode="aspectFit" />
+        <text>Wi-Fi</text>
+      </view>
+      <view class="service-box2 commstyle">
+        <image class="ic-image" src="../../imgs/ic_checkout.png" mode="aspectFit" />
+        <text>退房</text>
+      </view>
+    </view>
+  </view>
+</view>

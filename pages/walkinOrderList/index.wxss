@@ -1,0 +1,93 @@
+.container-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 8px 40px 0 rgba(42, 42, 42, 0.26);
+  border-radius: 16rpx;
+  width: 670rpx;
+  height: 182rpx;
+  margin-top: 30rpx;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.head-image {
+  background: #d8d8d8;
+  border-radius: 15rpx;
+  width: 121rpx;
+  height: 120rpx;
+  margin-left: 33rpx;
+  margin-right: 29rpx;
+}
+
+.head-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #545454;
+  text-align: center;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.text-top {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  text-align: left;
+  margin-bottom: 24rpx;
+}
+
+.text-bottom {
+  display: flex;
+  align-items: center;
+  font-family: PingFangSC-Medium;
+  color: #4b4b4b;
+}
+
+.discount {
+  background: #47c845;
+  width: 70rpx;
+  height: 28rpx;
+  margin-left: 6rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  line-height: 28rpx;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rpx 5rpx;
+}
+
+.footer {
+  width: 155rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 30rpx;
+}
+
+.footer-radio {
+  border: 2px solid #bbbbbb;
+  border-radius: 5rpx;
+  width: 32rpx;
+  height: 32rpx;
+  margin-bottom: 24rpx;
+}
+
+.footer-text {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #545454;
+  text-align: right;
+}
+
+.walkinHome-btn {
+  position: fixed;
+  bottom: 85rpx;
+}

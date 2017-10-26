@@ -1,0 +1,29 @@
+<import src="../../template/button.wxml" />
+
+<view class="auth-box">
+  <view class="title-container">
+    <text class="auth-text">请输入6位授权码</text>
+    <view class="hint-pos" bindtap="_showCodeInfo" data-type="code">
+      <text class="code-des" data-type="code">什么是授权码</text>
+      <image src="../../imgs/ic_help.png" class="help-circle" mode="aspectFit" />
+    </view>
+  </view>
+  <view class="input-short-container">
+    <text class="input-short">{{authCode[0]}}</text>
+    <text class="input-short">{{authCode[1]}}</text>
+    <text class="input-short">{{authCode[2]}}</text>
+    <text class="input-short">{{authCode[3]}}</text>
+    <text class="input-short">{{authCode[4]}}</text>
+    <text class="input-short">{{authCode[5]}}</text>
+  </view>
+  <input type="number" bindinput="_inputAuthCode" class="input-hidden" maxlength="6" focus="true" />
+  <text class="err-text" wx:if="{{isShowErrorText}}">{{hint}}</text>
+</view>
+
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <text class="modal-title">{{title}}</text>
+    <text class="modal-text">{{content}}</text>
+  </scroll-view>
+</view>

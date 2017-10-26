@@ -1,0 +1,79 @@
+.emblem-container {
+  width: 670rpx;
+  height: 510rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16rpx;
+}
+
+.national-emblem {
+  align-self: center;
+  width: 270rpx;
+  height: 200rpx;
+  background: #ffffff;
+  margin-bottom: 70rpx;
+}
+
+.hint-align {
+  display: flex;
+  text-align: center;
+}
+
+.people-container {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16rpx;
+  width: 670rpx;
+  margin-bottom: 30rpx;
+}
+
+.people-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 100rpx;
+  width: 620rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #4b4b4b;
+  padding-left: 50rpx;
+  justify-content: space-between;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.people-item::after {
+  content: ' ';
+  display: block;
+  width: 21rpx;
+  height: 21rpx;
+  margin-right: 50rpx;
+  border-right: solid 5rpx #dbdbdb;
+  border-top: solid 5rpx #dbdbdb;
+  transform: rotate(45deg);
+}
+
+.line {
+  width: 635rpx;
+  margin-left: 35rpx;
+  border-bottom: 2rpx solid #eef2f5;
+}
+
+.forget {
+  display: block;
+  width: 710rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #08B49C;
+  text-align: right;
+  padding-right: 40rpx;
+}
+
+.section-pos {
+  display: flex;
+  width: 710rpx;
+  padding-left: 40rpx;
+  padding-bottom: 20rpx;
+}

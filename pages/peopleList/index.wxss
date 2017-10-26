@@ -1,0 +1,57 @@
+.box-padding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background: #fcfcfc;
+  font-family: PingFangSC-Regular;
+  padding-top: 20rpx;
+  padding-bottom: 180rpx;
+}
+
+.selctPeople-box {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFF;
+  width: 670rpx;
+  min-height: 140rpx;
+  margin-bottom: 40rpx;
+  align-items: center;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  color: #4B4B4B;
+  line-height: 42rpx;
+}
+
+.borderRight {
+  border-right: solid 1px #DBDBDB;
+  margin-left: 40rpx;
+}
+
+.cell-body-text {
+  display: block;
+  font-weight: bold;
+}
+
+.selctPeople-box-footer {
+  width: 120rpx;
+  text-align: center;
+}
+
+.footer-image {
+  width: 24rpx;
+  height: 26rpx;
+}
+
+.selctPeople-btn {
+  position: fixed;
+  color: #F2F2F2;
+  bottom: 84rpx;
+}
+
+.empty-bg {
+  margin-top: 250rpx;
+  width: 500rpx;
+  height: 340rpx;
+  margin-bottom: 30rpx;
+}

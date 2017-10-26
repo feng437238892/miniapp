@@ -1,0 +1,139 @@
+.voice-container {
+  width: 750rpx;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  background: #ffffff;
+  font-family: PingFangSC-Regular;
+}
+
+.select-owned-voice {
+  width: 238rpx;
+  height: 70rpx;
+  border: solid 1px #EBEBEB;
+  background-color: #FFF;
+  border-radius: 30rpx;
+  text-align: center;
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  margin-bottom: 22rpx;
+}
+
+.select-voice-title {
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #4B4B4B;
+  line-height: 70rpx;
+}
+
+.voice-cell {
+  display: flex;
+  border-bottom: solid 1rpx #EBEBEB;
+  padding-top: 38rpx;
+  padding-bottom: 40rpx;
+  padding-right: 40rpx;
+  margin-left: 50rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #8b8b8b;
+}
+
+.voice-cell-header {
+  font-family: PingFangSC-Regular;
+  text-align: left;
+  width: 180rpx;
+  color: #8b8b8b;
+}
+
+.voice-cell-body {
+  text-align: start;
+  flex: 1;
+  color: #4b4b4b;
+}
+
+.voice-cell-footer {
+  flex: 1;
+  text-align: end;
+  position: relative;
+  padding-right: 35rpx;
+}
+
+.picker {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+}
+
+.text-color-empty {
+  color: #CBCBCB;
+}
+
+.text-color {
+  color: #4b4b4b;
+}
+
+.picker::before {
+  content: "";
+  position: absolute;
+  top: 12rpx;
+  right: 6rpx;
+  width: 18rpx;
+  height: 18rpx;
+  border-left: solid 2px #D8D8D8;
+  border-bottom: solid 2px #D8D8D8;
+  transform: rotate(-140deg);
+}
+
+.input-placeholder {
+  font-family: PingFangSC-Regular;
+  color: #CBCBCB;
+}
+
+.voice-btn {
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}
+
+
+/*  弹窗 CSS */
+
+.invoicelist-item {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  width: 500rpx;
+  padding-left: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+
+.invoicelist-title {
+  display: block;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #4b4b4b;
+  letter-spacing: 0px;
+  text-align: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.invoicelist-item-title {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #4b4b4b;
+  letter-spacing: 0px;
+  text-align: left;
+  padding-bottom: 10rpx;
+}
+
+.invoicelist-type {
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #8b8b8b;
+  letter-spacing: 0px;
+  text-align: left;
+}

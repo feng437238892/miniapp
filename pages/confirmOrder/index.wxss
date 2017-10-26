@@ -1,0 +1,84 @@
+.padding-bottom {
+  padding-bottom: 200rpx;
+}
+
+.room-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 750rpx;
+  padding-bottom: 10rpx;
+}
+
+.button-pos {
+  position: fixed;
+  bottom: 40rpx;
+  z-index: 10;
+}
+
+.checkButton-bottom {
+  width: 750rpx;
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.section-pos {
+  padding-left: 40rpx;
+  padding-top: 50rpx;
+}
+
+.invoice-container {
+  display: flex;
+  padding: 30rpx 40rpx 30rpx;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.invoice-title {
+  font-family: PingFangSC-Medium;
+  font-size: 33rpx;
+  color: #545454;
+  letter-spacing: 0px;
+  margin-bottom: 5rpx;
+}
+
+.invoice-info {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #545454;
+  letter-spacing: 0px;
+}
+
+.hint {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.hint::after {
+  display: inline-flex;
+  font-family: PingFangSC-Medium;
+  justify-content: center;
+  align-items: center;
+  content: '?';
+  background: #08b49c;
+  color: white;
+  font-size: 28rpx;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 100%;
+}
+
+.hint-container {
+  position: relative;
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}

@@ -1,0 +1,46 @@
+<import src="../../template/button.wxml" />
+<import src="../../template/orderDetail.wxml" />
+<import src="../../template/suborderCell.wxml" />
+<import src="../../template/shareModal.wxml" />
+
+<block wx:if="{{showContent}}">
+  <scroll-view scroll-y="true" class="padding-bottom" catchtouchmove="" bindscrolltolower="_fetchOrderDetail">
+
+    <template is="orderDetail" data="{{...order, showDetail: showDetail, isShowPrice: isShowPrice}}" />
+
+    <view class="invoice-container boxShadow" wx:if="{{order.config.enabled_invoice && order.invoice}}" bindtap="_applyInvoice">
+      <view class="column flex1">
+        <text class="invoice-title">发票</text>
+        <text class="invoice-info">{{order.invoice.title}}</text>
+      </view>
+      <text class="room-arrow font-blue-2">修改发票</text>
+    </view>
+
+    <!--判断-->
+    <view class="hint-container" data-type="room" bindtap="_showCodeInfo">
+      <text class="hint">提示：我们已为您优先分配以下房间，您也可以在此修改房间。</text>
+    </view>
+
+    <view class="room-container">
+      <block wx:for="{{order.suborders}}" wx:key="*this">
+        <template is="suborderCell" data="{{...item, type: 'detail', flow: order.flow, config: order.config}}" />
+      </block>
+    </view>
+
+  </scroll-view>
+
+  <view class="button-pos" wx:if="{{(!order.flow.is_signed && order.config.enabled_sign) || (!order.config.enabled_sign && !order.flow.is_paid)}}">
+    <template is="button" data="{{text: '下一步', type: 'primary', onClick: '_next'}}" />
+  </view>
+</block>
+
+<template is="shareModal" data="{{showShare: showShare}}" />
+
+<!-- 悬浮窗 catchtouchmove 阻止滑动事件向上冒泡 -->
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <text class="modal-title">{{title}}</text>
+    <text class="modal-text">{{content}}</text>
+  </scroll-view>
+</view>

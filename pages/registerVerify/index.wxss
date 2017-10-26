@@ -1,0 +1,70 @@
+.verifyContainer {
+  color: #545454;
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+
+.message {
+  width: 100%;
+  text-align: start;
+  padding-top: 40rpx;
+}
+
+.error-msg {
+  text-align: start;
+  width: 100%;
+  height: 42rpx;
+  color: #EA6A6A;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.phoneBox-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: solid 1px #EBEBEB;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+}
+
+.phoneBox-input-text1 {
+  color: #08B49C;
+}
+
+.phoneBox-input-text2 {
+  color: #CBCBCB;
+}
+
+.btn_disabled {
+  pointer-events: none;
+  opacity: .2;
+}
+
+.input-placeholder {
+  color: #CBCBCB;
+  font-size: 30rpx;
+  text-indent: 18rpx;
+}
+
+.paddings {
+  padding-left: 94rpx;
+  padding-right: 92rpx;
+}
+
+.user-rules {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #08B49C;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.user-rules-container {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #cbcbcb;
+  text-align: left;
+  padding-top: 40rpx;
+}

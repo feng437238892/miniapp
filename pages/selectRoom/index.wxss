@@ -1,0 +1,155 @@
+.room {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200rpx;
+  height: 70rpx;
+  background: #ffffff;
+  border-radius: 90rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #373946;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 35rpx;
+}
+
+.select-button {
+  display: flex;
+  width: 750rpx;
+  justify-content: center;
+  position: fixed;
+  top: 20rpx;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #08B49C;
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 100%;
+  font-family: PingFangSC-Medium;
+  font-size: 22rpx;
+  color: #ffffff;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 26rpx;
+  margin-left: 10rpx;
+}
+
+.room-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16rpx;
+  width: 580rpx;
+  padding-left: 50rpx;
+  padding-right: 40rpx;
+  margin-bottom: 30rpx;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.room-title-select {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #545454;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.room-tags {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #9f9f9f;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.room-tags::after {
+  content: " ";
+  padding-left: 15rpx;
+}
+
+.room-box {
+  padding-bottom: 180rpx;
+  padding-top: 100rpx;
+}
+
+.condition-container {
+  display: flex;
+  flex-direction: column;
+  width: 650rpx;
+  padding-top: 110rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.section-pos {
+  width: 650rpx;
+  padding-left: 20rpx;
+}
+
+.condition-box {
+  padding-top: 30rpx;
+  padding-bottom: 135rpx;
+}
+
+.condition-item {
+  display: flex;
+  flex-direction: row;
+  padding-top: 30rpx;
+  padding-bottom: 45rpx;
+}
+
+.condition-title {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.condition-button-pos {
+  position: fixed;
+  bottom: 70rpx;
+  margin-left: -35rpx;
+}
+
+.room-button-pos {
+  position: fixed;
+  bottom: 70rpx;
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20rpx;
+  flex-wrap: wrap;
+}
+
+.filter-icon {
+  width: 37rpx;
+  height: 35rpx;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #ebebeb;
+}
+
+.empty-container {
+  margin: auto 0;
+}
+
+.empty-hint {
+  display: block;
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium;
+  text-align: center;
+}

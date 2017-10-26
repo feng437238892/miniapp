@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.hotel-name {
+  display: block;
+  width: 100%;
+  font-family: PingFangSC-Medium;
+  font-size: 46rpx;
+  color: #4B4B4B;
+  letter-spacing: 0;
+  padding-bottom: 20rpx;
+  padding-top: 30rpx;
+}
+
+.line {
+  width: 100%;
+  height: 2rpx;
+  border-bottom: 2rpx solid #d8d8d8;
+}
+
+.line-margin-top {
+  margin-bottom: 10rpx;
+}
+
+.line-margin-bottom {
+  margin-bottom: 20rpx;
+}
+
+.info-row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10rpx;
+}
+
+.info-title {
+  flex: 1;
+  color: #8A8A8A;
+}
+
+.info-text {
+  display: flex;
+  align-items: center;
+  height: 52rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  letter-spacing: 0;
+  line-height: 32rpx;
+}
+
+.info-content {
+  color: #4B4B4B;
+}
+
+.info-title-bigger {
+  flex: 1;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #8A8A8A;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+
+.info-content-bigger {
+  font-family: PingFangSC-Medium;
+  font-size: 38rpx;
+  color: #4B4B4B;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+
+.daily-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 20rpx;
+}
+
+.item-row {
+  display: flex;
+  width: 100%;
+}
+
+.info-texts-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  color: #4B4B4B;
+  line-height: 32rpx;
+  font-family: PingFangSC-Regular;
+}
+
+.item-title {
+  flex: 1;
+  display: flex;
+  font-family: PingFangSC-Regular;
+  width: 130rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  color: #8A8A8A;
+  letter-spacing: 0;
+  line-height: 32rpx;
+  align-items: center;
+}
+
+.item-content {
+  flex: 1;
+  display: flex;
+  font-family: PingFangSC-Regular;
+  width: 130rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  color: #4B4B4B;
+  letter-spacing: 0;
+  line-height: 32rpx;
+  align-items: center;
+}
+
+.help-tel {
+  flex: 1;
+  display: flex;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  width: 100%;
+  color: #8A8A8A;
+  letter-spacing: 0;
+  line-height: 32rpx;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+}
+
+.flex1-5 {
+  flex: 1.5;
+}
+
+.flex0-7 {
+  flex: 0.7;
+}

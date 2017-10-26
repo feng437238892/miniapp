@@ -1,0 +1,12 @@
+<import src="../../template/button.wxml" />
+
+<view class="container paddingLeft">
+  <view class="wifi-title"><text>Wi-Fi</text></view>
+  <view class="wifi-box">
+    <text class="wifi-name">账号: fortrun999</text>
+    <text>密码: XXXXXX</text>
+  </view>
+</view>
+<view class="wifi-btn" bindtap="_next">
+  <template is="button" data="{{text: '确认', type: 'primary'}}" />
+</view>

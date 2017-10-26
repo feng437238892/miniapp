@@ -1,0 +1,128 @@
+.alignSelf {
+  align-self: center;
+}
+
+.hint {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.hint::after {
+  display: inline-flex;
+  font-family: PingFangSC-Medium;
+  justify-content: center;
+  align-items: center;
+  content: '?';
+  background: #08b49c;
+  color: white;
+  font-size: 28rpx;
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 100%;
+}
+
+.hint-container {
+  position: relative;
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.hint-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.padding {
+  padding: 40rpx;
+}
+
+.room-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16rpx;
+  width: 570rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  min-height: 125rpx;
+  box-shadow: 0 2rpx 20rpx 0 rgba(0, 0, 0, 0.10);
+  margin-bottom: 40rpx
+}
+
+.room-recommend {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  text-align: left;
+  padding-left: 15rpx;
+}
+
+.card-head {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.card-title {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+  margin-right: 20rpx;
+}
+
+.card-info {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #bbbbbb;
+  text-align: right;
+}
+
+.card-people {
+  display: flex;
+  margin-bottom: 25rpx;
+}
+
+.section-pos {
+  padding-left: 40rpx;
+}
+
+.button-pos {
+  position: fixed;
+  bottom: 40rpx;
+  z-index: 10;
+}
+
+.padding-bottom {
+  padding-bottom: 200rpx;
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20rpx;
+  flex-wrap: wrap;
+}
+
+.room-type-name {
+  font-family: PingFangSC-Regular;
+  font-size: 33rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+  align-self: center;
+  padding-left: 15rpx;
+}

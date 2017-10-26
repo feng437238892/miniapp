@@ -1,0 +1,52 @@
+<import src="../../template/button.wxml" />
+
+<view class="room-cell-container" wx:if="{{!showModal}}">
+  <block wx:for="{{suborders}}" wx:key="suborder">
+    <view class="room-cell-mini boxShadow" bindtap="_selectRoom" data-index="{{index}}">
+      <view class="row">
+        <text class="room-cell-title flex1">{{item.room_type_name}}</text>
+        <view class="icon-container">
+          <icon type="{{item.checked ? 'success_no_circle' : null}}" size="18" color="#08B49C" />
+        </view>
+      </view>
+      <text class="room-cell-number">{{item.room_number}}</text>
+    </view>
+  </block>
+</view>
+
+<view class="exit-agreement-container" wx:if="{{showModal}}">
+  <view class="close close-pos" bindtap="_hide" />
+  <view class="exit-header exit-line">
+    <image class="cell-icon" src="../../imgs/ic_exit.png" />
+    <text class="exit-title">退{{roomStr}}房</text>
+  </view>
+  <picker bindchange="_bindPicekerChange" data-type="exitTime" range="{{exitTimeRange}}" value="{{exitTimeValue}}">
+    <view class="exit-row">
+      <text class="exit-row-title flex1">请选择退房时间</text>
+      <text class="exit-row-arrow">{{exitTimeRange[exitTimeValue]}}</text>
+    </view>
+  </picker>
+  <picker bindchange="_bindPicekerChange" data-type="consume" range="{{consumeRange}}" value="{{consumeValue}}">
+    <view class="exit-row">
+      <text class="exit-row-title flex1">是否有客房消费?</text>
+      <text class="exit-row-arrow">{{consumeRange[consumeValue]}}</text>
+    </view>
+  </picker>
+  <picker bindchange="_bindPicekerChange" data-type="damage" range="{{damageRange}}" value="{{damageValue}}">
+    <view class="exit-row">
+      <text class="exit-row-title flex1">客房设施是否损坏?</text>
+      <text class="exit-row-arrow">{{damageRange[damageValue]}}</text>
+    </view>
+  </picker>
+
+  <view class="rule-hint" bindtap="_approveAgreement">
+    <view class="icon-container float">
+      <icon type="{{canConfirm ? 'success_no_circle' : null}}" size="18" />
+    </view>我同意按酒店实际查房情况来却定最终账单，请至前台归还实体房卡，并领取发票。
+  </view>
+</view>
+
+<view class="button-pos">
+  <template is="button" data="{{text: '下一步', type: 'warning', onClick: '_nextToShow'}}" wx:if="{{!showModal}}" />
+  <template is="button" data="{{text: '确认退房', type: !canConfirm ? 'disable' : 'warning', onClick: '_next'}}" wx:else />
+</view>

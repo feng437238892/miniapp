@@ -1,0 +1,84 @@
+.auth-box {
+  font-family: PingFangSC-Medium;
+  width: 630rpx;
+  letter-spacing: 0;
+  text-align: left;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+
+.input-short-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.input-hidden {
+  position: absolute;
+  top: 180rpx;
+  font-family: PingFangSC-Light;
+  font-size: 200rpx;
+  color: transparent;
+  height: 85rpx;
+  letter-spacing: 0;
+  border: solid 0 transparent;
+  background: transparent;
+  width: 630rpx;
+}
+
+.input-short {
+  font-family: PingFangSC-Light;
+  font-size: 52rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  border-bottom: solid 1px slategray;
+  padding-bottom: 15rpx;
+  width: 80rpx;
+  height: 85rpx;
+  text-align: center;
+}
+
+.auth-text {
+  flex: 1;
+  display: block;
+  font-size: 36rpx;
+  color: #4b4b4b;
+}
+
+.err-text {
+  display: block;
+  font-size: 32rpx;
+  color: #ea6a6a;
+  padding-top: 50rpx;
+}
+
+.hint-pos {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.code-des {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #6B6B6B;
+  letter-spacing: 0px;
+}
+
+.help-circle {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 70rpx;
+  margin-left: 8rpx;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 690rpx;
+  padding-right: 60rpx;
+  padding-top: 70rpx;
+  padding-bottom: 60rpx;
+}

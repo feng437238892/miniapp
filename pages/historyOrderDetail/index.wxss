@@ -1,0 +1,24 @@
+.dealContainer {
+  padding: 45rpx 50rpx 0rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.orderPrice {
+  padding-bottom: 30rpx;
+}
+
+.order-detail-row-self {
+  display: flex;
+  align-items: center;
+  border-top: solid 1rpx #EBEBEB;
+}
+
+.paddingTop {
+  padding-top: 30rpx;
+}
+
+.paddStyle {
+  width: 100%;
+  padding-bottom: 30rpx;
+}

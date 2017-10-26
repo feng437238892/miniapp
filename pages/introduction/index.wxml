@@ -1,0 +1,4 @@
+<text class="title">{{title}}</text>
+<image class="icon-bg" src="{{icon}}" mode="aspectFit" />
+<text class="content">{{content}} \n \n</text>
+<text class="content">{{hint}}</text>

@@ -1,0 +1,15 @@
+<import src="../../template/button.wxml" />
+
+<view class="mirror">
+
+  <view class="hint-container">
+    <image class="hint-icon" mode="aspectFit" src="../../imgs/ic_hint_green.png" />
+    <text class="hint">{{hint}}</text>
+  </view>
+  <image src="../../imgs/mirror_desktop.png" mode="aspectFit" class="mirror-img" />
+
+  <view class="button-pos" wx:if="{{!isFindOrder}}">
+    <template is="button" data="{{text: buttonText, type: 'primary', onClick: '_lastExit'}}" />
+  </view>
+
+</view>

@@ -1,0 +1,45 @@
+<template name="orderCell">
+    <view class="panel-box">
+        <view class="panel-title">
+            <text>{{hotel_name}}</text>
+            <text class="panel-code">{{auth_code || 'test01'}}</text>
+        </view>
+
+        <view class="panel-icon-container">
+            <view class="panel-icon" style="{{status == 4 ? 'background-color: #08b49c;' : 'background-color: #4B4B4B;'}}"/>
+            <text class="panel-icon-text">{{status == 4 ? '已入住' : '未入住'}}</text>
+        </view>
+        
+        <view class="dotted-line" />
+        
+        <view class="panel-cell">
+            <view class="panel-dic flex1">
+                <text class="dic">入店时间</text>
+                <view class="panel-cell-body">
+                    <view class="fontsize_Max body-title">{{enterTime.day}}日</view>
+                    <text class="body-doc">{{enterTime.yearAndMonth}} \n {{enterTime.weekday}}</text>
+                </view>
+            </view>
+            <view class="panel-dic">
+                <text class="dic">离店时间</text>
+                <view class="panel-cell-body">
+                    <view class="fontsize_Max body-title">{{leaveTime.day}}日</view>
+                    <text class="body-doc">{{leaveTime.yearAndMonth}} \n {{leaveTime.weekday}}</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="panel-cell-foot marginTop3">
+            <view class="panel-cell-foot-left">{{owner}} {{room_type}} x {{sum_count}}间</view>
+            <view class="circle-green" wx:if="{{(precheckinStatus == 6 || mode === 'checkin') && status != 4}}"/>
+            <view class="circle-orange" wx:if="{{precheckinStatus != 6 && status != 4 && mode === 'pre-checkin'}}"/>
+            <view class="circle-red" wx:if="{{status == 4}}"/>
+            <view class="panel-cell-foot-right" wx:if="{{(precheckinStatus == 6 || mode === 'checkin') && status != 4}}">您可以办理入住</view>
+            <view class="panel-cell-foot-right" wx:if="{{(precheckinStatus != 6 && status != 4) && mode === 'pre-checkin'}}">您可以提前选房</view>
+            <!--<view class="panel-cell-foot-right">您还有房间可办理入住</view>-->
+            <view class="panel-cell-foot-right" wx:if="{{status == 4}}">您可以申请退房</view>
+        </view>
+
+        <button class="checkin-btn" wx:if="{{(precheckinStatus != 1) && status == 1}}">办理入住</button>
+    </view>
+</template>

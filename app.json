@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/crossroad/index",
+    "pages/pay/index",
+    "pages/mirror/index",
+    "pages/assignRooms/index",
+    "pages/authentication/index",
+    "pages/exitRoom/index",
+    "pages/confirmOrder/index",
+    "pages/introduction/index",
+    "pages/result/index",
+    "pages/selectRoom/index",
+    "pages/home/index",
+    "pages/mine/index",
+    "pages/minePhone/index",
+    "pages/registerPhone/index",
+    "pages/registerVerify/index",
+    "pages/selectPeople/index",
+    "pages/addPeople/index",
+    "pages/peopleList/index",
+    "pages/invoiceList/index",
+    "pages/addInvoice/index",
+    "pages/historyOrderList/index",
+    "pages/historyOrderDetail/index",
+    "pages/signature/index",
+    "pages/orderDetail/index",
+    "pages/services/index",
+    "pages/wifi/index",
+    "pages/walkinHome/index",
+    "pages/walkinOrderDetail/index",
+    "pages/walkinOrderList/index",
+    "pages/station/index",
+    "pages/bill/index",
+    "pages/walkinAuth/index"
+  ],
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#2b2b2b",
+    "color": "#b2b2b2",
+    "list": [{
+      "pagePath": "pages/home/index",
+      "text": "首页",
+      "iconPath": "imgs/home_home_dis.png",
+      "selectedIconPath": "imgs/home_home_high.png"
+    }, {
+      "pagePath": "pages/mine/index",
+      "text": "我的",
+      "iconPath": "imgs/home_account_dis.png",
+      "selectedIconPath": "imgs/home_account_high.png"
+    }]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fcfcfc",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fcfcfc"
+  },
+  "debug": false
+}

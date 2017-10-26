@@ -1,0 +1,96 @@
+<template name="orderDetail">
+    <view class="deal-container">
+        <view class="deal-container-header">
+            <view class="deal-title-container">
+                <image class="inline-icon" src="../../imgs/order_hotel.png" mode="aspectFit"/>
+                <text class="deal-title">{{hotel.name || '暂无'}}</text>
+                <!--<image class="deal-title-icon" src='../../imgs/order_share.png' mode="aspectFit" bindtap="_showShareModal"/>-->
+            </view>
+
+            <view class="row">
+                <view class="column" style="flex: 7">
+                    <text class="small-title flex1 font-grey-1">房型</text>
+                    <block wx:for="{{rooms}}" wx:key="*this">
+                        <text class="cell-header font-black-1">{{item.room_type}} x {{item.room_count}}</text>
+                    </block>
+                </view>
+                <view class="column" style="flex: 5">
+                    <text class="small-title flex1 font-grey-1">入店时间</text>
+                    <text class="cell-header font-black-1">{{enterTimeYMD}}</text>
+                </view>
+            </view>
+
+            <view class="space"/>
+
+            <view class="row" style="{{showDetail ? 'width: 100%;padding-bottom: 30rpx;' : null}}">
+                <view class="column flex1" style="flex: 7">
+                    <text class="small-title flex1 font-grey-1">预订人</text>
+                    <text class="cell-header font-black-1">{{owner || '暂无'}} {{owner_tel || ''}}</text>
+                </view>
+                <view class="column flex1" style="flex: 5">
+                    <text class="small-title flex1 font-grey-1">离店时间</text>
+                    <text class="cell-header font-black-1">{{leaveTimeYMD}}</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="deal-bottom" wx:if="{{showDetail}}">
+
+            <view class="order-detail-row" bindtap="_openMap">
+                <view class="column flex1">
+                    <text class="small-title flex1 font-grey-1">地址</text> 
+                    <text class="normal-s flex1 font-black-1">{{hotel.address || '暂无'}}</text> 
+                </view>
+                <image class="cell-icon" mode="aspectFill" src="../../imgs/order_guide.png"/>
+            </view>
+
+             <view class="order-detail-row" style="{{!showDetail ? 'width: 100%;' : 'border-bottom: 0;'}}" bindtap="_makePhoneCall">
+                <view class="column flex1">
+                    <text class="small-title flex1 font-grey-1">电话</text> 
+                    <text class="normal-s flex1 font-black-1">{{hotel.tel || '暂无'}}</text> 
+                </view>
+                <image class="cell-icon" mode="aspectFill" src="../../imgs/order_phone.png"/>
+            </view>
+
+            <view class="order-detail-row" wx:if="{{pay_way != 'OTA' && flow.is_paid}}">
+                <view class="column flex1">
+                    <text class="small-title flex1 font-grey-1">价格详情</text> 
+                    <block wx:for="{{fee}}" wx:key="*this">
+                        <view class="row">
+                            <view class="normal-s flex1 font-black-1">{{item.mmdd}} {{item.type}} ￥{{item.price / 100}}</view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+
+            <view class="order-detail-row" data-type="code">
+                <view class="column flex1">
+                    <text class="small-title flex1 font-grey-1">授权码</text> 
+                    <view class="row flex1 align-center" bindtap="_showCodeInfo">
+                        <text class="order-code">{{auth_code || '暂无'}}</text> 
+                        <image src="../../imgs/ic_help.png" class="order-code-help" mode="aspectFit" />
+                    </view>
+                </view>
+            </view>
+
+            <view class="order-detail-row">
+                <view class="column flex1">
+                    <text class="small-title flex1 font-grey-1">订单来源</text> 
+                    <text class="normal-s flex1 font-black-1">{{channel || '暂无'}}</text> 
+                </view>
+            </view>
+
+            <!--<view class="order-detail-row">
+                <view class="column flex1">
+                    <text class="small-title flex1 font-grey-1">订单备注</text> 
+                    <text class="normal-s flex1 font-black-1">{{remark || '暂无'}}</text> 
+                </view>
+            </view>-->
+
+        </view>
+        <view class="order-detail-arrow" bindtap="_showDetail" >
+            <view class="arrow-wild-icon" style="{{showDetail ? null : 'transform: rotate(180deg);'}}"/> 
+        </view>
+    </view>
+    
+</template>

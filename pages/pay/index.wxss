@@ -1,0 +1,143 @@
+.font {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.title {
+  display: block;
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+  align-self: flex-start;
+  margin: 0 50rpx 0;
+  padding: 30rpx 0 30rpx;
+}
+
+.sum-container {
+  display: flex;
+  width: 650rpx;
+  margin: 0 50rpx 0;
+  padding: 50rpx 0 50rpx;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  line-height: 50rpx;
+}
+
+.sum-amount {
+  font-family: SFUIText-Medium;
+  text-align: right;
+}
+
+.sum-font {
+  font-family: PingFangSC-Medium;
+  text-align: left;
+}
+
+.prices-container {
+  padding: 30rpx 0 30rpx;
+}
+
+.button-pos {
+  position: fixed;
+  bottom: 40rpx;
+}
+
+.padding-bottom {
+  padding-bottom: 320rpx
+}
+
+.room-part {
+  display: flex;
+  flex-direction: row;
+  width: 650rpx;
+  margin-bottom: 20rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.subtitle {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.dp-part {
+  display: flex;
+  flex-direction: row;
+  width: 650rpx;
+  margin-bottom: 20rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.part-margin {
+  padding-bottom: 50rpx;
+}
+
+.prepay {
+  display: block;
+  width: 650rpx;
+  text-align: right;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #ababab;
+  letter-spacing: 0;
+  text-align: right;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.need_pay {
+  display: flex;
+  width: 650rpx;
+  justify-content: flex-end;
+  text-align: right;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  padding-bottom: 70rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC-Medium;
+}
+
+.need_pay_title {
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+  margin-right: 15rpx;
+}
+
+.need_pay_price {
+  font-size: 42rpx;
+  color: #08B49C;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.how-to-exit {
+  display: flex;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0px;
+  text-align: left;
+  padding-left: 50rpx;
+}
+
+.how-to-exit-icon {
+  margin-left: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}

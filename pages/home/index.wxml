@@ -1,0 +1,55 @@
+<import src="../../template/button.wxml" />
+<import src="../../template/orderCell.wxml" />
+
+<!-- 悬浮窗 catchtouchmove 阻止滑动事件向上冒泡 -->
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <text class="modal-title">{{title}}</text>
+    <text class="modal-text">{{content}}</text>
+  </scroll-view>
+</view>
+
+<scroll-view scroll-y="true" enable-back-to-top="true" class="scroll-container scroll-padding" wx:if="{{showContent}}">
+
+  <form bindsubmit="_onPressOrderCell" report-submit="true">
+    <block wx:if="{{orders.length > 0}}">
+      <view class="row align-center line-padding" bindtap="_showCodeInfo">
+        <text class="section-title order-title-margin flex1">当前订单</text>
+        <text class="code-des" data-type="code">什么是授权码</text>
+        <image src="../../imgs/ic_help.png" class="help-circle" mode="aspectFit" />
+      </view>
+      <block wx:for="{{orders}}" wx:key="{{order}}">
+        <view class="order-margin">
+          <template is="orderCell" data="{{...item, mode: mode}}" />
+          <button form-type="submit" name="order" data-id="{{item.order_id}}" class="button-class"></button>
+        </view>
+      </block>
+    </block>
+  </form>
+
+  <view class="empty-container" wx:if="{{orders.length <= 0}}" bindtap="_showCodeInfo" data-type="order">
+    <image class="empty-img" src="../../imgs/bg_empty_orders.png" mode="aspectFit" />
+    <text class="empty-hint">暂无订单</text>
+    <view class="hint-container">
+      <text class="hint" data-type="order">您的订单未在此发现 </text>
+      <image src="../../imgs/ic_help.png" class="help-circle" mode="aspectFit" />
+    </view>
+  </view>
+
+  <text class="section-title order-title-margin ">业务介绍</text>
+
+  <view class="intro-container boxShadow">
+    <block wx:for="{{intro}}" wx:key="">
+      <view class="intro-block {{index < (intro.length - 1) ? 'intro-block-line' : null}}" bindtap="_branchIntro" data-type="{{item.type}}">
+        <image class="intro-image" src="{{item.img}}" mode="aspectFit" />
+        <text class="intro-title">{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="space" />
+</scroll-view>
+
+<view class="mask-white" wx:if="{{isFetching}}" catchtap="_closeModal">
+</view>

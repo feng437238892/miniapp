@@ -1,0 +1,18 @@
+<import src="../../template/button.wxml" />
+
+<view class="container clear">
+  <view class="hint-bg">
+    <view class="row">
+      <image src='../../imgs/sign_pen.png' class="inline-icon" mode="aspectFill" />
+      <text class="sign-hint">请在方框内签名</text>
+    </view>
+    <text class="sign-sub-hint">*签名用以确认您的订单信息及当前支付的金额。</text>
+  </view>
+
+  <canvas class="container-content boxShadow" canvas-id="signature" disable-scroll="true" bindtouchstart="_bindtouchstart" bindtouchmove="_bindtouchmove" bindtouchcancel="_bindtouchcancel" bindlongtap="_bindlongtap" binderror="_binderror" />
+
+  <view class="button-pos">
+    <template is="button" data="{{text: '清除', type: 'default', onClick: '_clear'}}" />
+    <template is="button" data="{{text: '提交', type: !showHint ? 'primary' : 'disable', onClick: '_save'}}" />
+  </view>
+</view>

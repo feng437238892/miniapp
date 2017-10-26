@@ -1,0 +1,33 @@
+.wifi-title {
+  width: 100%;
+  font-family: PingFangSC-Medium;
+  font-size: 46rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.wifi-box {
+  width: 100%;
+  margin-top: 50rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.wifi-name {
+  display: block;
+  padding-bottom: 50rpx;
+}
+
+.paddingLeft {
+  /*padding-left: 50rpx;*/
+  margin-left: 50rpx;
+}
+
+.wifi-btn {
+  position: fixed;
+  bottom: 70rpx;
+}

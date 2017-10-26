@@ -1,0 +1,57 @@
+.mineTitleCard {
+  display: flex;
+  flex-direction: row;
+  width: 670rpx;
+  height: 188rpx;
+  align-items: center;
+  background-color: #FFF;
+  border-radius: 16rpx;
+  box-shadow: 2rpx 2rpx 30rpx #EBEBEB;
+  color: #4B4B4B;
+  font-size: 36rpx;
+}
+
+.head-image {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 100%;
+  margin-left: 38rpx;
+  margin-right: 36rpx;
+}
+
+.mineBody {
+  width: 670rpx;
+  max-height: 600rpx;
+  margin-top: 30rpx;
+  align-items: center;
+  background-color: #FFF;
+  border-radius: 16rpx;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.10);
+  color: #4B4B4B;
+  font-size: 32rpx;
+}
+
+.mineCell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  height: 120rpx;
+  border-bottom: solid 1px #f8f8f8;
+  padding-left: 35rpx;
+  padding-right: 44rpx;
+}
+
+.footer {
+  height: 18rpx;
+  width: 18rpx;
+  border-left: solid 2px #D8D8D8;
+  border-bottom: solid 2px #D8D8D8;
+  transform: rotate(-140deg);
+}
+
+.account-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 25rpx;
+}

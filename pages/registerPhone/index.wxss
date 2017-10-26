@@ -1,0 +1,18 @@
+.paddings {
+  padding-top: 35rpx;
+}
+
+.phoneBox-input {
+  width: 570rpx;
+  text-align: start;
+  padding-bottom: 20rpx;
+  border-bottom: solid 2rpx #EBEBEB;
+  margin-bottom: 60rpx;
+  text-indent: 2rpx;
+}
+
+.input-placeholder {
+  color: #CBCBCB;
+  font-size: 30rpx;
+  text-indent: 8rpx;
+}

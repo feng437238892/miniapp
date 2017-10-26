@@ -1,0 +1,28 @@
+.title {
+  display: block;
+  font-family: PingFangSC-Medium;
+  font-size: 46rpx;
+  color: #4B4B4B;
+  letter-spacing: 0px;
+  padding-left: 50rpx;
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+}
+
+.icon-bg {
+  display: block;
+  margin: 0 auto;
+  width: 540rpx;
+  height: 430rpx;
+  margin-bottom: 100rpx;
+}
+
+.content {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4B4B4B;
+  letter-spacing: 0px;
+  padding-left: 95rpx;
+  padding-right: 95rpx;
+}

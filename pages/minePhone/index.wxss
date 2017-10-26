@@ -1,0 +1,25 @@
+.phone-icon {
+  /*border: solid 14rpx #08b49c;*/
+  /*border-radius: 20rpx;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80rpx;
+}
+
+.phone-image {
+  height: 330rpx;
+  width: 460rpx;
+}
+
+.phone-text {
+  padding-top: 80rpx;
+  padding-bottom: 80rpx;
+  display: block;
+  font-size: 36rpx;
+  color: #2B2B2B;
+}
+
+.phone-btn {
+  border-radius: 77rpx;
+}

@@ -1,0 +1,25 @@
+<import src="../../template/button.wxml" />
+
+<view class="container">
+  <view class="emblem-container">
+    <image class="national-emblem" src="../../imgs/emblem.png" mode="aspectFit" />
+    <view class="hint-container-2">
+      <image class="hint-icon-2" mode="aspectFill" src="../../imgs/ic_hint.png" />
+      <text class="hint-clear">提示：酒店住宿需一人一证登记，杜绝“一人登记多人住宿”、“本人登记他人住宿”。</text>
+    </view>
+  </view>
+
+  <text class="section-title section-pos">选择刷身份证人数</text>
+
+  <view class="people-container boxShadow">
+    <block wx:for="{{count}}" wx:key="*this">
+      <text class="people-item" bindtap="_branchToMirror" data-count="{{index+1}}">{{index + 1}}人</text>
+      <view class="line" wx:if="{{index + 1 < count.length}}" />
+    </block>
+    <view class="line" wx:if="{{canNoCardCheckin}}" />
+    <text class="people-item" bindtap="_branchNoIDCard" data-count="{{index+1}}" wx:if="{{canNoCardCheckin}}">未带身份证</text>
+  </view>
+
+  <!--<text class="forget" bindtap="_branchNoIDCard">手工输入证件信息</text>-->
+
+</view>

@@ -1,0 +1,66 @@
+.walkin-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.walkin-box {
+  width: 280rpx;
+  height: 280rpx;
+  margin-bottom: 30rpx;
+}
+
+.walkin-text {
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.hint-text {
+  color: #6b6b6b
+}
+
+.hint-padding {
+  width: 690rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 35rpx;
+}
+
+.walkin-block-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 670rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.walkin-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 315rpx;
+  height: 315rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 20rpx 0 rgba(0, 0, 0, 0.10);
+  border-radius: 16rpx;
+  margin-bottom: 36rpx;
+}
+
+.walkin-block-img {
+  width: 88rpx;
+  height: 88rpx;
+  padding-bottom: 33rpx;
+}
+
+.walkin-block-title {
+  font-family: PingFangSC-Medium;
+  font-size: 26rpx;
+  color: #4B4B4B;
+  letter-spacing: 0;
+}

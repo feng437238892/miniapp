@@ -1,0 +1,8 @@
+<template name="shareModal">
+  <view class="modal-bg" wx:if="{{showShare}}" catchtap="_closeShareModal" catchtouchmove="">
+    <image src="../../imgs/ic_share_arrow.png" mode="aspectFit" class="share-point"/>
+    <text class="share-point-hint">点击进行分享</text>
+    <image src="../../imgs/bg_share.png" mode="aspectFit" class="share-bg"/>
+    <text class="share-hint">分享订单后，被分享人可获得与您同等操作权限。可以进行“选房”，“支付”，“入住”等全部操作。</text>
+  </view>
+</template>

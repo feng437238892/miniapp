@@ -1,0 +1,79 @@
+<view class="dealContainer">
+  <view class="deal-container-header">
+    <view class="deal-title-container">
+      <image class="inline-icon" src="../../imgs/order_hotel.png" mode="aspectFit" />
+      <text class="deal-title">{{historyInfoData.hotel.name}}</text>
+    </view>
+
+    <view class="row">
+      <view class="column" style="flex: 7">
+        <text class="small-title flex1 font-grey-1">房型</text>
+
+        <block wx:for="{{historyInfoData.rooms}}" wx:key="*this">
+          <text class="panel-rooms"> {{item.room_type}}·{{item.room_count}}</text>
+        </block>
+        <!--<text class="cell-header font-black-1">{{historyInfoData.owner}}</text>-->
+      </view>
+      <view class="column" style="flex: 5">
+        <text class="small-title flex1 font-grey-1">入店时间</text>
+        <text class="flex1 font-black-1">{{historyInfoData.enterTime.yearAndMonth}}</text>
+      </view>
+    </view>
+
+    <view class="space" />
+
+    <view class="row paddStyle">
+      <view class="column flex1" style="flex: 7">
+        <text class="small-title flex1 font-grey-1">预订人</text>
+        <text class="cell-header font-black-1">{{historyInfoData.owner}} {{owner_tel}}</text>
+      </view>
+      <view class="column flex1" style="flex: 5">
+        <text class="small-title flex1 font-grey-1">离店时间</text>
+        <text class="flex1 font-black-1">{{historyInfoData.leaveTime.yearAndMonth}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="deal-bottom {{showDetail != 0 ? 'translate-show' : 'translate-hide'}}">
+
+    <view class="order-detail-row">
+      <view class="column flex1">
+        <text class="small-title flex1 font-grey-1">地址</text>
+        <text class="normal-s flex1 font-black-1">{{historyInfoData.hotel.name}}</text>
+      </view>
+      <image class="cell-icon" mode="aspectFill" src="../../imgs/oreder_guide.png" />
+    </view>
+
+    <view class="order-detail-row">
+      <view class="column flex1">
+        <text class="small-title flex1 font-grey-1">电话</text>
+        <text class="normal-s flex1 font-black-1">{{historyInfoData.hotel.tel}}</text>
+      </view>
+      <image class="cell-icon" mode="aspectFill" src="../../imgs/order_phone.png" />
+    </view>
+
+    <view class="order-detail-row-self">
+      <view class="column flex1">
+        <text class="small-title flex1 font-grey-1 paddingTop">价格详情</text>
+        <view class="orderPrice">
+          <view class="normal-s flex1 font-black-1">1月9日 ¥1500</view>
+          <view class="normal-s flex1 font-black-1">1月10日 ¥1400</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="order-detail-row">
+      <view class="column flex1">
+        <text class="small-title flex1 font-grey-1">订单来源</text>
+        <text class="normal-s flex1 font-black-1">{{historyInfoData.channel}}</text>
+      </view>
+    </view>
+
+    <view class="order-detail-row">
+      <view class="column flex1">
+        <text class="small-title flex1 font-grey-1">订单备注</text>
+        <text class="normal-s flex1 font-black-1">{{historyInfoData.remark}}</text>
+      </view>
+    </view>
+  </view>
+</view>

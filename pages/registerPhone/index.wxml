@@ -1,0 +1,14 @@
+<import src="../../template/button.wxml" />
+
+<view class="container paddings">
+  <view class="hint-container-2" wx:if="{{!isEdit}}">
+    <image class="hint-icon-2" mode="aspectFill" src="../../imgs/ic_hint.png" />
+    <text class="hint-clear">您可以通过您的手机号码查找订单。</text>
+  </view>
+  <view class="phoneBox-input">
+    <input type="number" maxlength="11" placeholder="输入您的手机号码" bindinput="bindKeyInput" value="{{phone_number}}" focus="{{true}}" />
+  </view>
+  <view>
+    <template is="button" data="{{text: '下一步', type: showHintBtn ? 'primary' : 'disable', onClick: '_next'}}" />
+  </view>
+</view>

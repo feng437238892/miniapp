@@ -1,0 +1,91 @@
+.padding {
+  padding: 40rpx;
+  line-height: 1.6;
+}
+
+.section-pos {
+  padding-left: 40rpx;
+}
+
+.button-pos {
+  position: fixed;
+  bottom: 40rpx;
+  z-index: 10;
+}
+
+.padding-bottom {
+  padding-bottom: 250rpx;
+}
+
+.invoice-title {
+  font-family: PingFangSC-Medium;
+  font-size: 33rpx;
+  color: #545454;
+  letter-spacing: 0px;
+  margin-bottom: 5rpx;
+}
+
+.invoice-info {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #545454;
+  letter-spacing: 0px;
+}
+
+.bill-container-divider {
+  border-top: 2rpx solid #ECECEC;
+  width: 590rpx;
+  align-self: center;
+}
+
+.bill-container {
+  display: flex;
+  padding: 30rpx 40rpx 30rpx;
+  align-items: center;
+}
+
+.invoice-container {
+  display: flex;
+  padding: 30rpx 40rpx 30rpx;
+  align-items: center;
+}
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  margin-bottom: 10rpx;
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  border: 1rpx solid #ECECEC;
+  border-radius: 16rpx;
+  box-shadow: 0px 2rpx 20rpx 0px rgba(0, 0, 0, 0.10);
+}
+
+.bill-title {
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #ABABAB;
+  letter-spacing: 0px;
+}
+
+.bill-price {
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #4B4B4B;
+  letter-spacing: 0px;
+}
+
+.price-container {
+  display: flex;
+  width: 560rpx;
+  flex-direction: column;
+}
+
+.row-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+}

@@ -1,0 +1,27 @@
+<import src="../../template/button.wxml" />
+
+<block wx:if="{{!isFetching}}">
+  <view class="box-padding">
+    <block wx:for="{{invoiceData}}" wx:key="@this" wx:for-index="idx" wx:for-item="item" wx:if="{{invoiceData.length > 0}}">
+      <view class="voiceList-box boxShadow" bindtap="_editInvoice" data-index="{{idx}}">
+        <view class="voiceList-box-title paddingRL borderBottom">
+          <view class="title_body">{{item.cn}}</view>
+          <view class="title_footer">
+            <image class="title-footer-image" src="../../imgs/icon_edit.png" mode="aspectFit" />
+          </view>
+        </view>
+        <view class="voiceList-box-text paddingRL">
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{invoiceData.length <= 0}}">
+      <image src="../../imgs/bg_empty_invoices.png" class="empty-bg" mode="aspectFit" />
+      <text class="font-black-2 normal-m">您还没有添加常用发票</text>
+    </block>
+  </view>
+
+  <view class="voiceList-btn" bindtap="_addInvoice">
+    <template is="button" data="{{text: '新增发票信息', type: 'primary'}}" />
+  </view>
+</block>

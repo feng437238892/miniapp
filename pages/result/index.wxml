@@ -1,0 +1,20 @@
+<import src="../../template/button.wxml" />
+
+<view class="container">
+  <image class="result-icon" src="../../imgs/result_success.png" mode="aspectFit" />
+  <text class="result-text1">{{text}}</text>
+  <text class="result-text2">{{subtext}}</text>
+
+  <!--<text class="title font-blue-1">结果页面，多个结果页面的合集，下一步是开发票</text>-->
+  <view class="button-pos">
+      <block wx:if="{{canCheckinOther}}">
+      <template is="button" data="{{text: '继续办理其他房间', type: 'primary', onClick: '_next'}}" /> 
+    </block>
+     <block wx:if="{{!canCheckinOther && canApplyInvoice}}">
+      <template is="button" data="{{text: '申请发票', type: canCheckinOther ? 'default' : 'primary', onClick: mode=='checkin' ?  '_branch' : '_next'}}" />
+    </block> 
+    
+
+    <template is="button" data="{{text: '返回首页', type: (canCheckinOther || canApplyInvoice) ? 'default' : 'primary', onClick: '_last'}}" />
+  </view>
+</view>

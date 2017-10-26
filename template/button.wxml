@@ -1,0 +1,43 @@
+<template name="button">
+  <button 
+    wx:if="{{type==='default'}}" 
+    hover="true"
+    hover-class="bg-white-hover"
+    class="button-white" 
+    bindtap="{{onClick}}"
+    hover-stay-time="150">
+    {{text ? text : "确认"}}
+  </button>
+  <button  
+    wx:if="{{type==='primary'}}" 
+    hover="true"
+    hover-class="bg-dark-grey-hover"
+    class="button-dark"
+    bindtap="{{onClick}}"
+    hover-stay-time="150">
+    {{text ? text : "确认"}}
+  </button >
+  <button  
+    wx:if="{{type==='disable'}}"
+    class="button-dark-disable" >
+    {{text ? text : "确认"}}
+  </button >
+  <button  
+    hover="true"
+    hover-class="bg-green-hover"
+    class="button-green" 
+    bindtap="{{onClick}}"
+    hover-stay-time="150"
+    wx:if="{{type==='wechat'}}">
+    {{text ? text : "确认"}}
+  </button >
+  <button  
+    wx:if="{{type==='warning'}}" 
+    hover="true"
+    class="button-red"
+    bindtap="{{onClick}}"
+    hover-class="bg-red-hover"
+    hover-stay-time="150">
+    {{text ? text : "确认"}}
+  </button >
+</template>

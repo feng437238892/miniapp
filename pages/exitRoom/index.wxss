@@ -1,0 +1,122 @@
+.room-cell-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  width: 670rpx;
+  justify-content: space-between;
+  padding-top: 30rpx;
+  padding-bottom: 190rpx;
+}
+
+.room-cell-mini {
+  background: #ffffff;
+  border-radius: 16rpx;
+  width: 235rpx;
+  padding: 30rpx 40rpx 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.room-cell-title {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #08b49c;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.room-cell-number {
+  font-family: PingFangSC-Regular;
+  font-size: 60rpx;
+  color: #08b49c;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.button-pos {
+  position: fixed;
+  bottom: 80rpx;
+}
+
+.exit-agreement-container {
+  display: flex;
+  width: 650rpx;
+  flex-direction: column;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  padding-top: 50rpx;
+}
+
+.exit-header {
+  display: flex;
+  font-family: PingFangSC-Medium;
+  font-size: 36rpx;
+  color: #08b49c;
+  border-bottom: solid 2rpx #eaeaea;
+  letter-spacing: 0;
+  text-align: left;
+  align-items: center;
+  padding-bottom: 30rpx;
+}
+
+.exit-title {
+  padding-left: 20rpx;
+}
+
+.rule-hint {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #6b6b6b;
+  letter-spacing: 0;
+  text-align: left;
+  padding-top: 35rpx;
+}
+
+.float {
+  float: left;
+  margin-right: 20rpx;
+}
+
+.exit-row {
+  display: flex;
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+  border-bottom: solid 2rpx #eaeaea;
+}
+
+.exit-row-title {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.exit-row-arrow {
+  display: flex;
+  position: relative;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #545454;
+  align-items: center;
+}
+
+.exit-row-arrow::after {
+  content: ' ';
+  display: block;
+  border-top: solid 5rpx #d8d8d8;
+  border-right: solid 5rpx #d8d8d8;
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+  transform: rotate(45deg);
+}
+
+.close-pos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 50rpx;
+}

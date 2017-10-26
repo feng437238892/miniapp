@@ -1,0 +1,56 @@
+.addPeople-box {
+  background-color: #FFFFFF;
+  color: #CBCBCB;
+  font-size: 30rpx;
+  padding-left: 40rpx;
+  border-radius: 16rpx;
+  width: 630rpx;
+  height: 242rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.addPeople-box-input {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  width: 630rpx;
+  align-items: center;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #4b4b4b;
+  text-align: left;
+}
+
+.input-placeholder {
+  color: #CBCBCB;
+}
+
+.addPeople-btn {
+  margin-top: 70rpx;
+  margin-bottom: 40rpx;
+}
+
+.peoplePadding {
+  padding-left: 38rpx;
+  padding-right: 42rpx;
+}
+
+.borderBottom {
+  position: relative;
+  border-bottom: solid 1px #EBEBEB;
+}
+
+.addPeople-box-input-icon {
+  position: absolute;
+  right: 38rpx;
+  top: 40rpx;
+  width: 48rpx;
+  height: 40rpx;
+}
+
+.camera-image {
+  margin-right: 38rpx;
+  width: 48rpx;
+  height: 40rpx;
+}

@@ -1,0 +1,148 @@
+.order-title-margin {
+  display: block;
+  padding-top: 30rpx;
+  padding-left: 40rpx;
+  padding-bottom: 20rpx;
+}
+
+.order-margin {
+  position: relative; 
+  margin-bottom: 40rpx;
+}
+
+.intro-container {
+  display: flex;
+  width: 670rpx;
+  height: 190rpx;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.intro-block {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 165rpx;
+  align-items: center;
+  background: #ffffff;
+}
+
+.intro-block-line {
+  border-right: 2rpx solid #f1f1f1;
+}
+
+.intro-image {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.intro-title {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #bbbbbb;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40rpx;
+  padding-bottom: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-img {
+  width: 335rpx;
+  height: 360rpx;
+}
+
+.empty-hint {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #6b6b6b;
+  letter-spacing: 0px;
+  padding-top: 30rpx;
+  padding-bottom: 60rpx;
+}
+
+.hint-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.hint {
+  display: flex;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #aaaaaa;
+  letter-spacing: 0px;
+  text-align: left;
+  align-self: flex-start;
+  padding-left: 40rpx;
+  padding-right: 10rpx;
+}
+
+.code-des {
+  display: flex;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #8B8B8B;
+  letter-spacing: 0px;
+  align-items: center;
+}
+
+.help-circle {
+  height: 30rpx;
+  width: 30rpx;
+  margin-left: 5rpx;
+}
+
+.line-padding {
+  padding-right: 40rpx;
+}
+
+.mask-white {
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  height: 100%;
+  width: 750rpx;
+  background: rgba(255, 255, 255, 0);
+  z-index: 999;
+}
+
+.button-class {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 670rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  background: transparent;
+}
+
+button::after {
+  border: none;
+}
+
+.checkin-btn {
+  background-color: #08B49C;
+  width: 100%;
+  color: #fff;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  margin-bottom: 10rpx;
+  padding:10rpx 0;
+}

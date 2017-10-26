@@ -1,0 +1,11 @@
+<import src="../../template/button.wxml" />
+
+<view class="container">
+  <view class="phone-icon">
+    <image class="phone-image" src="../../imgs/ic_bg_phone.png" mode="aspectFit" />
+  </view>
+  <text class="phone-text">手机号码: {{mobile}}</text>
+  <view class="phone-btn" bindtap="_next">
+    <template is="button" data="{{text: '更换手机号', type: 'primary'}}" />
+  </view>
+</view>

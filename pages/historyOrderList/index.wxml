@@ -1,0 +1,49 @@
+<import src="../../template/orderCell.wxml" />
+
+<!--<view class="container center marginTop">
+  <block wx:for="{{historyInfoData}}" wx:key="@this">
+    <template is="orderCell" data="{{...item, type: 'rooms'}}" />
+  </block>
+</view>-->
+<view class="containerPaddingTop">
+  <block wx:for="{{historyInfoData}}" wx:key="@this" wx:for-index="idx" wx:for-item="item">
+    <view class="container">
+      <view name="historyOrderCell">
+        <view class="panel-box" bindtap="_next" data-id="{{item.order_id}}">
+          <view class="panel-title">{{item.hotel_name}}</view>
+
+          <view class="panel-icon-container">
+            <view class="panel-icon" />
+            <text class="panel-icon-text">未入住</text>
+          </view>
+
+          <view class="dotted-line" />
+
+          <view class="panel-cell">
+            <view class="panel-dic">
+              <text class="dic">入店时间</text>
+              <view class="panel-cell-body">
+                <view class="fontsize_Max">{{item.enterTime.day}}日</view>
+                <text class="body-doc">{{item.enterTime.yearAndMonth}} \n {{item.enterTime.weekday}}</text>
+              </view>
+            </view>
+            <view class="panel-dic">
+              <text class="dic">离店时间</text>
+              <view class="panel-cell-body">
+                <view class="fontsize_Max">{{item.leaveTime.day}}日</view>
+                <text class="body-doc">{{item.leaveTime.yearAndMonth}} \n {{item.leaveTime.weekday}}</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="panel-cell-foot marginTop3">
+            <text class="panel-rooms">{{item.owner}}</text>
+            <block wx:for="{{item.rooms}}" wx:key="*this">
+              <text class="panel-rooms"> {{item.room_type}}·{{item.room_count}}</text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

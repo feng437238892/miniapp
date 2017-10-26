@@ -1,0 +1,91 @@
+<import src="../../template/button.wxml" />
+<import src="../../template/orderDetail.wxml" />
+<import src="../../template/suborderCell.wxml" />
+<import src="../../template/shareModal.wxml" />
+
+<scroll-view class="padding-bottom" scroll-y="true" wx:if="{{!isCheckinPeople}}" catchtouchmove="">
+
+  <template is="orderDetail" data="{{...order, showDetail: showDetail}}" />
+
+  <view class="orderInfo" wx:if="{{order.config.enabled_invoice}}">
+    <view class="invoice-container" bindtap="_applyInvoice">
+      <view class="column flex1">
+        <text class="invoice-title">发票</text>
+        <text class="invoice-info">{{order.hasInvoice ? order.invoice.title : '个人/公司名'}}</text>
+      </view>
+      <text class="room-arrow font-blue-2">{{order.invoice ? '修改发票' : '申请发票'}}</text>
+    </view>
+    <!--<view class="bill-container-divider" wx:if="{{order.canCheckout}}" />
+    <view class="bill-container" bindtap="_checkBill" wx:if="{{order.canCheckout}}">
+      <view class="column flex1">
+        <text class="invoice-title">账单</text>
+        <view class="row">
+          <view class="column flex1">
+            <text class="bill-title">总预付费</text>
+            <text class="bill-price">¥ {{price.Yprepay}}</text>
+          </view>
+          <view class="column flex1">
+            <text class="bill-title">总消费</text>
+            <text class="bill-price">¥ {{price.Ytotal_fee}}</text>
+          </view>
+          <view class="column flex1">
+            <text class="bill-title">总应付</text>
+            <text class="bill-price">¥ {{price.Yneed_pay}}</text>
+          </view>
+        </view>
+      </view>
+      <text class="room-arrow font-blue-2" bindtap="_showPriceDetail">查看详情</text>
+    </view>-->
+  </view>
+
+  <view class="room-container">
+    <block wx:for="{{order.suborders}}" wx:key="suborder">
+      <template is="suborderCell" data="{{...item, type: 'detail', mode:'pre-checkin', config: order.config}}" />
+    </block>
+  </view>
+
+</scroll-view>
+
+<!--<view class="button-pos" wx:if="{{order.canCheckout}}">
+  <template is="button" data="{{text: '确定今日离店', type: 'warning', onClick: '_next'}}" />
+  <view class="space" />
+  <template is="button" data="{{text: '续住', type: 'default', onClick: '_openHint'}}" />
+</view>-->
+
+<view class="button-pos" wx:if="{{showButton}}">
+  <template is="button" data="{{text: '下一步', type: 'primary', onClick: '_next'}}" />
+</view>
+
+<template is="shareModal" data="{{showShare: showShare}}" />
+
+<!-- 悬浮窗 catchtouchmove 阻止滑动事件向上冒泡 -->
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <text class="modal-title">什么是授权码?</text>
+    <text class="modal-text">· 授权码是每个订单使用微前台入住酒店的唯一标识，您可将授权码分享给同住人，同住人同样可以使用微前台入住酒店。\n\n· 您预订酒店后在入住当日会收到包含“授权码”的提示短信。您也可以搜索微信小程序“微前台”，在订单详情中查阅“授权码”。\n\n· 如您不是房间预订人，您可联系预订人，获取授权码，通过微前台完成入住。</text>
+  </scroll-view>
+</view>
+
+<view class="mask" wx:if="{{isShowPrice}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <text class="modal-title">价格详情</text>
+    <view class="price-container">
+      <block wx:for="{{price.fees}}" wx:key="fee" wx:for-item="fee">
+        <view class="column">
+          <view class="row-container">
+            <text class="subtitle flex1">{{fee.room_type}} x {{fee.amount}}</text>
+            <text class="subtitle flex1">¥{{fee.sum}}</text>
+          </view>
+          <block wx:for="{{fee.date_price}}" wx:key="*this" wx:for-item="dp">
+            <view class="row-container">
+              <text class="modal-text flex1">{{dp.dateStr}}</text>
+              <text class="modal-text flex1">¥{{dp.Yprice}} x {{fee.amount}}</text>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

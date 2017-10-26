@@ -1,0 +1,56 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true
+	},
+	"compileType": "weapp",
+	"libVersion": "1.6.0",
+	"appid": "wx7db23a53ebce339d",
+	"projectname": "wxminapp",
+	"condition": {
+		"weapp": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "微前台",
+					"pathName": "pages/home/index",
+					"query": "",
+					"scene": "1012"
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/pay/index",
+					"query": "",
+					"scene": "1012"
+				},
+				{
+					"id": -1,
+					"name": "扫码",
+					"pathName": "pages/confirmOrder/index",
+					"query": "",
+					"scene": "1012"
+				},
+				{
+					"id": 3,
+					"name": "扫码1",
+					"pathName": "pages/crossroad/index",
+					"query": "hotel_id=0864f6731acb11e780ad5cb9018d9b5c&device_id=fc0accc4dea463ae9a613fb6530aecab",
+					"scene": "1011"
+				}
+			]
+		},
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

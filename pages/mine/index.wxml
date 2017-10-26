@@ -1,0 +1,42 @@
+<import src="../../template/button.wxml" />
+
+<view class="container ">
+  <view class="mineTitleCard">
+    <image class="head-image" src="{{user.avatarUrl}}" mode="aspectFit" bindtap="onClick" />
+    <text class="head-text">{{user.nickName}}</text>
+  </view>
+
+  <view class="mineBody">
+    <view class="mineCell" bindtap="_branchPhone">
+      <image src="../../imgs/account_phone.png" mode="aspectFit" class="account-icon" />
+      <text class="flex1">我的手机</text>
+      <text class="footer"></text>
+    </view>
+    <view class="mineCell" bindtap="_branchPeople">
+      <image src="../../imgs/account_guests.png" mode="aspectFit" class="account-icon" />
+      <view class="flex1">常用联系人</view>
+      <text class="footer"></text>
+    </view>
+    <view class="mineCell" bindtap="_branchInvoice">
+      <image src="../../imgs/account_invoices.png" mode="aspectFit" class="account-icon" />
+      <view class="flex1">我的发票</view>
+      <text class="footer"></text>
+    </view>
+
+    <view class="mineCell" bindtap="closeDebug" wx:if="{{enableDebug}}">
+      <image src="../../imgs/account_invoices.png" mode="aspectFit" class="account-icon" />
+      <view class="flex1">关闭Debug</view>
+      <text class="footer"></text>
+    </view>
+    <!--<view class="mineCell" bindtap="_branchOrder">
+      <image src="../../imgs/account_history.png" mode="aspectFit" class="account-icon" />
+      <view class="flex1">历史订单</view>
+      <text class="footer"></text>
+    </view>-->
+    <!--<view class="mineCell" bindtap="_branchHelp">
+      <image src="../../imgs/account_help.png" mode="aspectFit" class="account-icon" />
+      <view class="flex1">帮助</view>
+      <text class="footer"></text>
+    </view>-->
+  </view>
+</view>

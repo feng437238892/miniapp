@@ -1,0 +1,69 @@
+<view class="container">
+  <text class="hotel-name">{{order.hotel_name}}</text>
+  <view class="line line-margin-bottom" />
+
+  <view class="info-row">
+    <text class="info-text info-title">姓名</text>
+    <view class="">
+      <block wx:for="{{order.guests}}" wx:key>
+        <text class="info-text info-content">{{item}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="info-row">
+    <text class="info-text info-title">人数</text>
+    <text class="info-text info-content">{{order.guests.length}}</text>
+  </view>
+  <view class="info-row">
+    <text class="info-text info-title">房间号码</text>
+    <view>
+      <block wx:for="{{order.room_numbers}}" wx:key>
+        <text class="info-text info-content">{{item}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="info-row">
+    <text class="info-text info-title">到店时间</text>
+    <text class="info-text info-content">{{order.in_time_str}}</text>
+  </view>
+  <view class="info-row">
+    <text class="info-text info-title">离店时间</text>
+    <text class="info-text info-content">{{order.out_time_str}}</text>
+  </view>
+
+  <view class="line line-margin-bottom line-margin-top" />
+  <view class="daily-container">
+    <view class="item-row">
+      <text class="item-title flex0-7">日期</text>
+      <text class="item-title flex0-7">房号</text>
+      <text class="item-title flex1-5">项目</text>
+      <text class="item-title">消费</text>
+      <text class="item-title">付款</text>
+    </view>
+    <block wx:for="{{order.bills}}" wx:key>
+      <view class="item-row">
+        <text class="item-content flex0-7">{{item.pay_time_str}}</text>
+        <text class="item-content flex0-7">{{item.room_number}}</text>
+        <text class="item-content flex1-5">{{item.pay_name}}</text>
+        <text class="item-content">¥ {{item.consume}}</text>
+        <text class="item-content">¥ {{item.payment}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="line line-margin-bottom" />
+
+  <view class="info-row">
+    <text class="info-text info-title">消费总计</text>
+    <text class="info-text info-content">¥  {{order.consume}}</text>
+  </view>
+  <view class="info-row">
+    <text class="info-text info-title">实收</text>
+    <text class="info-text info-content">¥  {{order.payment}}</text>
+  </view>
+  <view class="info-row">
+    <text class="info-text info-title-bigger">退款</text>
+    <text class="info-text info-content-bigger">¥ {{order.refunds}}</text>
+  </view>
+  <text class="help-tel">如有疑问请拨打酒店前台电话: {{order.hotel_tel}}</text>
+
+</view>

@@ -1,0 +1,4 @@
+<view class="lanuch-container">
+  <image src="../../imgs/lanuch.png" class="lanuch-img" mode="aspectFit" />
+  <text class="version-code">v1.5.4</text>
+</view>

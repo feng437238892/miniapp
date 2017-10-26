@@ -1,0 +1,58 @@
+<import src="../../template/button.wxml" />
+
+<view class="walkin-container">
+  <image class="walkin-box" src="../../imgs/bg_empty_orders.png" mode="aspectFit" bindtap="_toOrderList" />
+  <view class="walkin-text">
+    <text class="hint-text">没有发现可办理入住的订单</text>
+    <!--\n如果您没有办理入住，可以在此办理入住\n也可输入授权码查找订单-->
+  </view>
+  <!--<template is="button" data="{{text: '无订单入住', type: 'primary' , onClick: '_walkin'}}" />-->
+
+  <view class="hint-container-2 hint-padding">
+    <image class="hint-icon-2" mode="aspectFill" src="../../imgs/ic_hint.png" />
+    <text class="hint-clear">提示：您可以尝试以下操作。</text>
+  </view>
+
+  <!--<view class="walkin-block">
+    <view class="hint-pos" bindtap="_showCodeInfo" data-type="code">
+      <text class="code-des" data-type="code">什么是授权码</text>
+      <image src="../../imgs/ic_help.png" class="help-circle" mode="aspectFit" />
+    </view>
+    <template is="button" data="{{text: '授权码查找订单', type: 'default' , onClick: '_authCode'}}" />
+  </view>
+
+  <view class="walkin-block">
+    <view class="hint-pos" bindtap="_showCodeInfo" data-type="card">
+      <text class="code-des" data-type="code">如何刷身份证</text>
+      <image src="../../imgs/ic_help.png" class="help-circle" mode="aspectFit" />
+    </view>
+    <template is="button" data="{{text: '刷身份证查找订单', type: 'default' , onClick: '_authCard'}}" />
+  </view>-->
+
+  <view class="walkin-block-container">
+    <view class="walkin-block" bindtap='_authCard'>
+      <image src="../../imgs/ic_walkin_idcard_search.png" class="walkin-block-img" mode="aspectFit" />
+      <text class="walkin-block-title">刷身份证查找订单</text>
+    </view>
+    <view class="walkin-block" bindtap='_authCode'>
+      <image src="../../imgs/ic_walkin_code_search.png" class="walkin-block-img" mode="aspectFit" />
+      <text class="walkin-block-title">授权码查找订单</text>
+    </view>
+    <view class="walkin-block" bindtap='_walkin'>
+      <image src="../../imgs/ic_walkin_no_order.png" class="walkin-block-img" mode="aspectFit" />
+      <text class="walkin-block-title">无订单入住</text>
+    </view>
+    <view class="walkin-block" bindtap='_noCardVerify'>
+      <image src="../../imgs/ic_walkin_no_card_verify.png" class="walkin-block-img" mode="aspectFit" />
+      <text class="walkin-block-title">无证核验</text>
+    </view>
+  </view>
+</view>
+
+<view class="mask" wx:if="{{isShowCodeInfo}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <text class="modal-title">{{title}}</text>
+    <text class="modal-text">{{content}}</text>
+  </scroll-view>
+</view>

@@ -1,0 +1,23 @@
+/* pages/crossroad/index.wxss */
+
+.lanuch-container {
+  height: 100%;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.lanuch-img {
+  width: 340rpx;
+  height: 90rpx;
+}
+
+.version-code {
+  display: block;
+  color: #bdbdbd;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+  margin-top: 26rpx;
+}

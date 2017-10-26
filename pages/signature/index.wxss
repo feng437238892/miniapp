@@ -1,0 +1,49 @@
+.container-content {
+  flex: 1;
+  width: 670rpx;
+  margin: 0rpx;
+  padding: 0rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  align-self: center;
+  margin-bottom: 340rpx;
+}
+
+.hint-bg {
+  display: flex;
+  flex-direction: column;
+  width: 710rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 40rpx;
+}
+
+.margin {
+  margin-top: 20rpx;
+}
+
+.sign-hint {
+  display: flex;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #4b4b4b;
+  padding-left: 15rpx;
+}
+
+.sign-sub-hint {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #6b6b6b;
+  letter-spacing: 0;
+  text-align: left;
+  padding-top: 15rpx;
+}
+
+.button-pos {
+  display: flex;
+  position: fixed;
+  bottom: 80rpx;
+  flex-direction: column;
+  height: 220rpx;
+  justify-content: space-between;
+}

@@ -1,0 +1,21 @@
+.historyOrderCell {
+  margin-bottom: 40rpx;
+  background: #ffffff;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.10);
+  border-radius: 16rpx;
+  width: 670rpx;
+  height: 350rpx;
+}
+
+.panel-rooms {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #6b6b6b;
+  letter-spacing: 0;
+  text-align: left;
+  padding-right: 16rpx;
+}
+
+.containerPaddingTop {
+  padding-top: 40rpx;
+}

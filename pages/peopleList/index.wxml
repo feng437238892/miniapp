@@ -1,0 +1,25 @@
+<import src="../../template/button.wxml" />
+
+<block wx:if="{{!isFetching}}">
+  <view class="box-padding">
+    <block wx:for="{{guestInfoData}}" wx:for-index="idx" wx:for-item="item" wx:key='@this' wx:if="{{guestInfoData.length > 0}}">
+      <view class="selctPeople-box boxShadow" bindtap="_editPeople" data-index="{{idx}}">
+        <view class="flex1 borderRight">
+          <text class="cell-body-text">{{item.name}}</text>
+          <text>{{item.idcard}}</text>
+        </view>
+        <view class="selctPeople-box-footer">
+          <image class="footer-image" src="../../imgs/icon_edit.png" mode="aspectFit" />
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{guestInfoData.length <= 0}}">
+      <image src="../../imgs/bg_empty_guests.png" class="empty-bg" mode="aspectFit" />
+      <text class="font-black-2 normal-m">您还没有添加常用入住人</text>
+    </block>
+  </view>
+
+  <view class="selctPeople-btn" bindtap="_next">
+    <template is="button" data="{{text: '新增入住人', type: 'primary'}}" />
+  </view>
+</block>

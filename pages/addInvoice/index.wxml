@@ -1,0 +1,88 @@
+<import src="../../template/button.wxml" />
+
+<view class="voice-container">
+  <!--<view wx:if="{{showTitle}}" class="select-owned-voice boxShadow" bindtap="_showToast">
+    <text class="select-voice-title">选择已有发票</text>
+  </view>-->
+
+  <picker bindchange="_bindPickerChange" value="{{mediaValue}}" range="{{mediaRange}}" data-value="mediaValue" data-type="media" range-key="cn">
+    <view class="voice-cell">
+      <view class="voice-cell-header">领取方式</view>
+      <view class="voice-cell-footer">
+        <text class="picker text-color">{{mediaRange[mediaValue].cn}}</text>
+      </view>
+    </view>
+  </picker>
+
+  <picker bindchange="_bindPickerChange" value="{{typeValue}}" range="{{typeRange}}" data-value="typeValue" data-type="type" range-key="cn">
+    <view class="voice-cell">
+      <view class="voice-cell-header">开票类型</view>
+      <view class="voice-cell-footer">
+        <text class="picker {{typeValue == 0 ? 'text-color-empty' : 'text-color'}}">{{typeRange[typeValue].cn}}</text>
+      </view>
+    </view>
+  </picker>
+
+  <picker bindchange="_bindPickerChange" value="{{categoryValue}}" range="{{categoryRange}}" data-value="categoryValue" data-type="category" range-key="item_desc" wx:if="{{mode != 'mine'}}">
+    <view class="voice-cell">
+      <view class="voice-cell-header">开票内容</view>
+      <view class="voice-cell-footer">
+        <text class="picker {{invoiceData.category && invoiceData.category.length > 0 ? 'text-color' : 'text-color-empty'}}">{{invoiceData.category || '请选择'}}</text>
+      </view>
+    </view>
+  </picker>
+
+  <view class="voice-cell" wx:if="{{typeValue > 0}}">
+    <input class="voice-cell-body" value="{{invoiceData.title}}" placeholder="请输入发票抬头" bindinput='_bindInputChange' data-type="title" />
+  </view>
+
+  <view class="voice-cell" wx:if="{{typeValue > 0 && typeValue > 1}}">
+    <input class="voice-cell-body" value="{{invoiceData.tax_registry_no}}" placeholder="统一社会信用代码（或纳税人识别号）" bindinput='_bindInputChange' data-type="tax_registry_no" />
+  </view>
+
+  <block wx:if="{{showVatInput}}">
+    <view class="voice-cell">
+      <input class="voice-cell-body" value="{{invoiceData.address}}" placeholder="注册地址（营业执照上的住所）" bindinput='_bindInputChange' data-type="address" />
+    </view>
+    <view class="voice-cell">
+      <input class="voice-cell-body" value="{{invoiceData.phone_number}}" placeholder="联系电话（区号＋总机）" bindinput='_bindInputChange' data-type="phone_number" />
+    </view>
+    <view class="voice-cell">
+      <input class="voice-cell-body" value="{{invoiceData.bank_name}}" placeholder="开户行" bindinput='_bindInputChange' data-type="bank_name" />
+    </view>
+    <view class="voice-cell">
+      <input class="voice-cell-body" value="{{invoiceData.bank_account}}" placeholder="开户行账号" bindinput='_bindInputChange' data-type="bank_account" />
+    </view>
+  </block>
+
+  <view class="voice-btn">
+    <block wx:if="{{!isEdit}}">
+      <template is="button" data="{{text: '确定', type: canDoNext ? 'primary': 'disable', onClick: '_confirm'}}" />
+      <view class="space" />
+      <template is="button" data="{{text:'取消', type: 'default', onClick: '_back'}}" />
+    </block>
+    <block wx:if="{{isEdit}}">
+      <template is="button" data="{{text: '保存', type: canDoNext ? 'primary': 'disable', onClick: '_confirm'}}" />
+      <view class="space" />
+      <template is="button" data="{{text:'删除', type: 'warning', onClick: '_delete'}}" />
+    </block>
+  </view>
+</view>
+
+<!-- 悬浮窗 catchtouchmove 阻止滑动事件向上冒泡 -->
+<view class="mask" wx:if="{{showToast}}">
+  <image src="../../imgs/ic_pop_close.png" class="close-circle" bindtap="_close" mode="aspectFit" />
+  <scroll-view class="toast-container boxShadow" catchtouchmove="" scroll-y="true">
+    <view class="row">
+      <text class="flex1 modal-title">常用发票</text>
+    </view>
+    <view class="column">
+      <block wx:for="{{showList}}" wx:key="item">
+        <view class="invoicelist-item boxShadow" bindtap="_selectInvoice" data-index="{{index}}">
+          <text class="invoicelist-item-title">{{item.title}}</text>
+          <text class="invoicelist-type">{{item.type_cn}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

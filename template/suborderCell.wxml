@@ -1,0 +1,50 @@
+<import src="button.wxml" />
+
+<template name="suborderCell">
+   <view class="cell boxShadow marginTopmin" wx:if="{{type==='detail'}}">
+        
+        <view class="room-cell" bindtap="{{status == 1 && room_number != null ? '_selectRoom' : null}}" data-subid="{{suborder_id}}" data-number="{{room_number}}">
+          
+          <view class="column flex1">
+            <view class="row">
+              <text class="room-number-clear">{{room_number ? room_number : '未分房'}}</text>
+              <text class="room-title-inline" wx:if="{{mode == 'checkin' && room_status_id == 2}}">(未打扫)</text>
+              <text class="room-title-inline flex1">{{room_type_name}} {{breakfastStr}}</text>
+            </view>
+            <view wx:if="{{tags.length > 0 || room_number.length <= 0}}">
+              <block wx:for="{{tags}}" wx:key="tag" wx:for-item="tag" wx:if="{{room_number.length > 0}}">
+                <text class="tags">{{tag}}</text>
+              </block>
+              <block wx:if="{{room_number.length <= 0}}">
+                <text class="tags" >{{mode === 'pre-checkin' ? '您可继续操作，有空房后会为您自动分配。' : '系统目前暂无房间，您可以前往前台办理。'}}</text>
+              </block>
+            </view>
+          </view>
+
+          <text class="room-arrow font-gray-4" wx:if="{{status == 1 && room_number != null}}">重新选房</text>
+          <text class="bill-status" wx:if="{{status == 4}}">{{'已入住'}}</text>
+          <text class="bill-status" wx:if="{{status == 5 || status == 6}}">{{'已离店'}}</text>
+          <text class="bill-status" wx:if="{{status == 2 || status == 3}}">{{'已取消'}}</text>
+          
+        </view>
+
+        <view class="people-cell" bindtap="{{!is_checkin ? '_changePeople' : null}}" data-subid="{{suborder_id}}" wx:if="{{guests.length > 0 || (mode==='pre-checkin' && config.enabled_pre_checkin)}}">
+          <view class="people-cell-title">
+            <text class="room-title flex1">入住人</text>
+            <text class="room-arrow font-gray-4 flex1" wx:if="{{status == 1}}">修改</text>
+          </view>
+          <block wx:for="{{guests}}" wx:key="*this" wx:if="{{guests.length > 0}}">
+            <text class="people-info">{{item.name}}    {{item.idcard}}</text>
+          </block>
+          <block wx:if="{{(!guests || guests.length <= 0) && mode==='pre-checkin'}}">
+            <text class="people-info">未添加入住人</text>
+          </block>
+        </view>
+
+        <!--<text class="bill-arrow" bindtap="_getRoomBill" data-subid="{{suborder_id}}" wx:if="{{is_checkin}}">{{room_number}}消费信息</text>-->
+        <view class="checkButton" bindtap="{{status == 1 ? '_applyCard' : null}}" wx:if="{{((order.config.enabled_sign && flow.is_signed && !is_checkin) || (!order.config.enabled_sign && flow.is_paid && !is_checkin)) && room_number != null}}" data-subid="{{suborder_id}}">
+          <template is="button" data="{{text: '办理入住', type: status == 1 ? 'primary': 'disable'}}" />
+        </view>
+        
+    </view>
+</template>

@@ -1,0 +1,24 @@
+<import src="../../template/button.wxml" />
+
+<view class="container peoplePadding">
+  <view class="hint-container-2" wx:if="{{mode === 'pre-checkin'}}">
+    <image class="hint-icon-2" mode="aspectFill" src="../../imgs/ic_hint.png" />
+    <text class="hint-clear">提示：在此添加的入住人会自动存放在您的常用联系人列表当中。您可以在底部菜单“我的”-“常用联系人”里进行编辑，删除。</text>
+  </view>
+
+  <view class="addPeople-box boxShadow">
+    <view class="addPeople-box-input borderBottom">
+      <input type="text" placeholder="请输入证件姓名" class="flex1" bindinput="_bindInputName" value="{{name}}" />
+      <!--<image class="camera-image" src="../../imgs/ic_camera.png" mode="aspectFit" />-->
+    </view>
+    <view class="addPeople-box-input">
+      <input type="idcard" placeholder="请输入证件号码" class="flex1" bindinput="_bindInputIDNumber" value="{{idCard}}" maxlength="18" />
+    </view>
+  </view>
+  <view class="addPeople-btn">
+    <template is="button" data="{{text: '保存', type: canDoNext ? 'primary': 'disable', onClick: '_next'}}" />
+  </view>
+  <template is="button" data="{{text: '取消', type: 'default', onClick: '_cancel'}}" wx:if="{{!guestId}}" />
+  <template is="button" data="{{text: '删除', type: 'warning', onClick: '_delPeople'}}" wx:if="{{guestId && guestId.length > 0}}" />
+
+</view>

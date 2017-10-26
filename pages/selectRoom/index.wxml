@@ -1,0 +1,50 @@
+<import src="../../template/button.wxml" />
+
+<view class="select-button">
+  <view class="room boxShadow" bindtap='_openFilter' wx:if="{{!isSelectCond}}">
+    <text>房间偏好</text>
+    <text class="count">{{count}}</text>
+  </view>
+</view>
+<view class="container" wx:if="{{!isSelectCond}}">
+
+  <view class="room-box">
+    <block wx:for="{{rooms}}" wx:key="room">
+      <view bindtap="_selectRoom" data-index="{{index}}" class="room-item {{item.checked ? 'select-shadow' : 'boxShadow'}}">
+        <view class="column flex1">
+          <text class="room-title-select">{{item.room_type_name}}  {{item.room_number}} {{mode =='checkin' && item.room_status_id == 2 ? '(未打扫)' : ''}}</text>
+          <view class="tags-container" wx:if="{{item.tags.length > 0}}">
+            <block wx:for="{{item.tags}}" wx:key="tag" wx:for-item="tag">
+              <text class="room-tags">{{tag}}</text>
+            </block>
+          </view>
+        </view>
+        <icon value="{{index}}" checked="{{item.checked}}" size="24" type="{{item.checked ? 'success_circle' : 'circle'}}" color="{{item.checked ? '#08B49C' : '#bbbbbb'}}" />
+      </view>
+    </block>
+  </view>
+
+</view>
+
+<view class="condition-container" wx:else>
+  <view class="filter-container">
+    <image class="filter-icon" src="../../imgs/ic_filter.png" mode="aspectFill" />
+    <text class="section-title section-pos">您的房间偏好</text>
+  </view>
+
+  <view class="condition-box">
+    <block wx:for="{{conditions}}">
+      <view class="condition-item" bindtap="_selectCond" data-index="{{index}}">
+        <text class="condition-title flex1">{{item.item_desc}}</text>
+        <view class="icon-container">
+          <icon type="{{item.checked ? 'success_no_circle' : null}}" size="18" color="#08B49C" />
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>
+
+<view class="room-button-pos">
+  <template is="button" data="{{text: '确认', type: canSave || isSelectCond ? 'primary' : 'disable', onClick: isSelectCond ? '_confirmFilter' : '_confirm'}}" />
+</view>

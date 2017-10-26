@@ -1,0 +1,35 @@
+<import src="../../template/button.wxml" />
+
+<view class="container clear">
+  <view class="container-box">
+    <view class="body">
+      <image class="head-image" src="../../imgs/home_face.png" mode="aspectFit" />
+      <view class="head-text">
+        <view class="text-top">{{roomStyle}}</view>
+        <view class="text-bottom"><text>{{price}}</text><text class="discount">{{discount}}</text></view>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="footer-radio"></view>
+      <view class="footer-text">仅剩 1 间</view>
+    </view>
+  </view>
+
+  <view class="container-box">
+    <view class="body">
+      <image class="head-image" src="../../imgs/home_face.png" mode="aspectFit" />
+      <view class="head-text">
+        <view class="text-top">{{roomStyle}}</view>
+        <view class="text-bottom"><text>{{price}}</text><text class="discount">{{discount}}</text></view>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="footer-radio"></view>
+      <view class="footer-text">仅剩 1 间</view>
+    </view>
+  </view>
+
+  <view class="walkinHome-btn">
+    <template is="button" data="{{text: '办理入住', type: 'primary' , onClick: '_walkin'}}" />
+  </view>
+</view>

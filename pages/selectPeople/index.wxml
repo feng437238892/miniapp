@@ -1,0 +1,32 @@
+<import src="../../template/button.wxml" />
+
+<view class="add-container paddings">
+  <view class="add-people boxShadow" bindtap="_addPeople">
+    <text class="cricle">+</text>
+    <text>新增入住人</text>
+  </view>
+</view>
+
+<view class="box-padding">
+  <block wx:for="{{people}}">
+    <view bindtap="_selectPeople" data-index="{{index}}" class="selectPeople-box {{item.checked ? 'select-shadow' : 'boxShadow'}}">
+      <view class="box-item">
+        <text class="cell-body-text">{{item.name}}</text>
+        <text class="cell-body-text">{{item.idcard}}</text>
+      </view>
+      <view class="icon-container">
+        <icon type="{{item.checked ? 'success_no_circle' : null}}" size="18" color="#08B49C" />
+      </view>
+    </view>
+  </block>
+
+  <view class="hint-container-2">
+    <image class="hint-icon-2" mode="aspectFill" src="../../imgs/ic_hint.png" />
+    <text class="hint-clear">提示：您可以在底部菜单“我的”-“常用联系人”里对所有身份信息进行编辑删除。</text>
+  </view>
+</view>
+
+<view class="space" />
+<view class="selectPeople-btn">
+  <template is="button" data="{{text: '确认', type: canEmpty || canNext ? 'primary' : 'disable', onClick: '_next'}}" />
+</view>
